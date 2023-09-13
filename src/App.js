@@ -49,16 +49,14 @@ function App() {
           data.map((pokemon) => {
             return <PokemonItem key={pokemon.name} pokemon={pokemon} />;
           })}
-
-        {nextUrl !==
-          "https://pokeapi.co/api/v2/pokemon/?offset=1280&limit=1" && (
-          <div className="btn-container">
-            <button className="btn" onClick={handleNextPage}>
-              Next Page
-            </button>
-          </div>
-        )}
       </div>
+      {nextUrl !== "https://pokeapi.co/api/v2/pokemon/?offset=1280&limit=1" && (
+        <div className="btn-container">
+          <button className="btn" onClick={handleNextPage}>
+            Next Page
+          </button>
+        </div>
+      )}
     </>
   );
 }
