@@ -1,5 +1,7 @@
 .pokemon-container {
-  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
   padding: 1rem;
   width: 25rem;
   display: flex;
@@ -12,8 +14,11 @@
 
 .pokemon-container:hover {
   transform: scale(0.99);
+  opacity: 0.8;
 }
 
 .pokemon-container h1 {
   font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }

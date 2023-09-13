@@ -1,0 +1,20 @@
+.modal-container {
+  display: flex;
+  padding: 3rem;
+  border-radius: 5px;
+  gap: 1rem;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  color: white;
+  min-width: 25rem;
+  z-index: 10;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7); /* This creates a shadow that covers the entire screen */
+}
+
+.modal-container h1 {
+  text-transform: capitalize;
+}

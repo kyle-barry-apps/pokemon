@@ -4,6 +4,7 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState([]);
+
   const url = "https://pokeapi.co/api/v2/pokemon/";
 
   useEffect(() => {
@@ -22,12 +23,18 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      {data.length > 0 &&
-        data.map((pokemon) => {
-          return <PokemonItem key={pokemon.name} pokemon={pokemon} />;
-        })}
-    </div>
+    <>
+      <h1 className="title">Select a Pokemon</h1>
+      <div className="container">
+        {data.length > 0 &&
+          data.map((pokemon) => {
+            return <PokemonItem key={pokemon.name} pokemon={pokemon} />;
+          })}
+      </div>
+      <div className="btn-container">
+        <button></button>
+      </div>
+    </>
   );
 }
 
