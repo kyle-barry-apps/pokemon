@@ -4,8 +4,26 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState([]);
+  const [nextUrl, setNextUrl] = useState("");
+  console.log(nextUrl);
 
   const url = "https://pokeapi.co/api/v2/pokemon/";
+
+  const handleNextPage = () => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(nextUrl);
+        const data = await response.json();
+
+        setData(data.results);
+        setNextUrl(data.next);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +32,7 @@ function App() {
         const data = await response.json();
 
         setData(data.results);
+        setNextUrl(data.next);
       } catch (error) {
         console.log(error);
       }
@@ -30,9 +49,15 @@ function App() {
           data.map((pokemon) => {
             return <PokemonItem key={pokemon.name} pokemon={pokemon} />;
           })}
-      </div>
-      <div className="btn-container">
-        <button></button>
+
+        {nextUrl !==
+          "https://pokeapi.co/api/v2/pokemon/?offset=1280&limit=1" && (
+          <div className="btn-container">
+            <button className="btn" onClick={handleNextPage}>
+              Next Page
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
