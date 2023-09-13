@@ -8,13 +8,44 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: green;
+  background: linear-gradient(0.9turn, rgb(108, 108, 254), blue);
   color: white;
-  min-width: 25rem;
+  min-width: 30rem;
   z-index: 10;
   box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7); /* This creates a shadow that covers the entire screen */
 }
 
 .modal-container h1 {
   text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.title-and-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.15s;
+  margin-bottom: 2rem;
+}
+
+.title-and-close:hover {
+  opacity: 0.8;
+}
+
+.close-icon {
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.data-container {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.data-container div {
 }

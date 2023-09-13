@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 
 const PokemonModal = ({ pokeData, setPokeData }) => {
   const modal_ref = useRef();
+  console.log(pokeData);
 
   useEffect(() => {
     const handler = (e) => {
@@ -20,11 +21,27 @@ const PokemonModal = ({ pokeData, setPokeData }) => {
 
   return (
     <div className="modal-container" ref={modal_ref}>
-      <h1>{pokeData.name}</h1>
-      <div className="height">Height: {pokeData.height}</div>
-      <div className="weight">Weight: {pokeData.weight}</div>
-      <div className="base-exp">
-        Base Experience: {pokeData.base_experience}
+      <div className="title-and-close">
+        <h1>{pokeData.name}</h1>
+        <div className="close-icon" onClick={() => setPokeData({})}>
+          X
+        </div>
+      </div>
+      <div className="data-container">
+        <div>Order</div>
+        <div>{pokeData.order}</div>
+      </div>
+      <div className="data-container">
+        <div>Height</div>
+        <div>{pokeData.height}</div>
+      </div>
+      <div className="data-container">
+        <div>Weight</div>
+        <div>{pokeData.weight}</div>
+      </div>
+      <div className="data-container">
+        <div>Base Experience</div>
+        <div>{pokeData.base_experience}</div>
       </div>
     </div>
   );
