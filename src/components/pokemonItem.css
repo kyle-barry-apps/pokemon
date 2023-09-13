@@ -1,0 +1,19 @@
+.pokemon-container {
+  border: 1px solid blue;
+  padding: 1rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.pokemon-container:hover {
+  transform: scale(0.99);
+}
+
+.pokemon-container h1 {
+  font-weight: 500;
+}
